@@ -1,3 +1,4 @@
+acronyms:
 - term: Amazon ECR
   acronym1: 'Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.'
   

@@ -11,43 +11,18 @@ b) DevOps Engineers
 
 ## Terms and Acronyms
 
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon Elastic Container Service (ECS)</summary>
-  Amazon Elastic Container Service (ECS) is a cloud computing service in Amazon Web Services (AWS) that manages containers and allows developers to run applications in the cloud without having to configure an environment for the code to run in.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
-<details>
- <summary>Amazon ECR</summary>
-  Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.
-</details>
+{% for item in acronyms %}
+ <details>
+  <summary>{{ item.term }}</summary>
+   <p>{{ item.acronym1 }}</p>
+   
+   {% if item.acronym2 == nil %}
+     <p>{{ item.acronym2 }}</p>
+   {% endif %}
+
+   {% if item.acronym3 == nil %}
+     <p>{{ item.acronym3 }}</p>
+   {% endif %}
+   
+ </details>
+{% endfor %}
