@@ -11,6 +11,8 @@ b) DevOps Engineers
 
 ## Terms and Acronyms
 
+{% assign terms = acronyms | where_exp: "item" %}
+
 {% for item in acronyms %}
  <details>
   <summary>{{ item.term }}</summary>
