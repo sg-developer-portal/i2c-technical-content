@@ -33,7 +33,7 @@ The intended audience are:
  
 <details>  
  <summary>AWS</summary>
- <p>mazon Web Services</p>
+ <p>Amazon Web Services</p>
 </details>
  
 <details>  
@@ -63,12 +63,12 @@ The intended audience are:
  
 <details>  
  <summary>CapCEN</summary>
- <p>The Capability Centre for Government ICT infrastructure is to strengthen GovTech capabilities in architecting and designing secure, resilient and cost effective public sector</p>s ICT infrastructure covering data centres, networks, platforms, end-points and system operations. The centre will spearhead assessment and applicability of new technologies in these domains and develop compelling use cases to encourage adoption, and also to develop technical competency within GovTech.</p>
+ <p>The Capability Centre for Government ICT infrastructure is to strengthen GovTech capabilities in architecting and designing secure, resilient and cost effective public sector's ICT infrastructure covering data centres, networks, platforms, end-points and system operations. The centre will spearhead assessment and applicability of new technologies in these domains and develop compelling use cases to encourage adoption, and also to develop technical competency within GovTech.</p>
 </details>
  
 <details> 
  <summary>Checkov</summary>
- <p>Checkov scans cloud infrastructure configurations to find misconfigurations before they</p>re deployed.</p>
+ <p>Checkov scans cloud infrastructure configurations to find misconfigurations before they're deployed.</p>
  <p>Checkov uses a common command line interface to manage and analyse infrastructure as code (IaC) scan results across platforms.</p>
 </details>
  
@@ -99,7 +99,7 @@ The intended audience are:
  
 <details>  
  <summary>driftctl</summary>
- <p>Infrastructure drift is a blind spot and a source of potential security issues.'
+ <p>Infrastructure drift is a blind spot and a source of potential security issues.</p>
  <p>driftctl is a free and open-source CLI that warns of infrastructure drift and fills in the missing piece in your DevSecOps toolbox.</p>
 </details>
  
@@ -141,7 +141,7 @@ The intended audience are:
  
 <details>
  <summary>Serverless</summary>
- <p>Serverless offloads all management responsibility for backend cloud infrastructure and operations tasks - provisioning, scheduling, scaling, patching and more - to the cloud provider. This gives developers more time to develop and optimize their front-end application code and business logic. And with serverless, customers never pay for idle capacity. They pay only for the resources required to run their applications, and only when those applications are running. The name notwithstanding, there are most definitely servers in serverless computing. The term </p>serverless</p> describes the customer</p>s experience with those servers: they are invisible to the customer, who doesn</p>t see them, manage them, or interact with them in any way.</p>
+ <p>Serverless offloads all management responsibility for backend cloud infrastructure and operations tasks - provisioning, scheduling, scaling, patching and more - to the cloud provider. This gives developers more time to develop and optimize their front-end application code and business logic. And with serverless, customers never pay for idle capacity. They pay only for the resources required to run their applications, and only when those applications are running. The name notwithstanding, there are most definitely servers in serverless computing. The term 'serverless' describes the customer's experience with those servers: they are invisible to the customer, who doesn't see them, manage them, or interact with them in any way.</p>
 </details>
  
 <details>
@@ -166,7 +166,7 @@ The intended audience are:
  
 <details> 
  <summary>tfstate</summary>
- <p>Terraform must store state about managed infrastructure and configuration. This state is used by Terraform to map real world resources to the configuration, keep track of metadata, and to improve performance for large infrastructures.'
+ <p>Terraform must store state about managed infrastructure and configuration. This state is used by Terraform to map real world resources to the configuration, keep track of metadata, and to improve performance for large infrastructures.</p>
  <p>This state is stored by default in a local file named "terraform.tfstate", but it can also be stored remotely, which works better in a team environment.</p>
  <p>Terraform uses this local state to create plans and make changes to the  infrastructure. Prior to any operation, Terraform does a refresh to update the state with the real infrastructure.</p>
 </details>
@@ -178,5 +178,5 @@ The intended audience are:
 
 <details>
  <summary>WebSocket API</summary>
- <p>The WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user</p>s browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.</p>
+ <p>The WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.</p>
 </details>
