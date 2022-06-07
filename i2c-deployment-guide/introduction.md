@@ -12,7 +12,7 @@ The intended audience are:
 
 ## Terms and Acronyms
 
-{% assign terms = acronyms | where_exp: "item" %}
+{% assign terms = data.acronyms | where_exp: "item" %}
 
 {% for item in acronyms %}
  <details>
