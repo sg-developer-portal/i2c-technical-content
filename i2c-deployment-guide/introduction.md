@@ -5,16 +5,13 @@ This deployment guide is developed based on outcomes of GovTech’s Capability C
 ## Audience
 
 The intended audience are:
-<ol type="a">
-  <li>Infrastructure Engineers</li>
-  <li>DevOps Engineers</li>
-</ol>
+
+1. Infrastructure Engineers
+2. DevOps Engineers
 
 ## Terms and Acronyms
 
-{% assign terms = data.acronyms | where_exp: "item" %}
-
-{% for item in acronyms %}
+{% for item in site.acronyms %}
  <details>
   <summary>{{ item.term }}</summary>
    <p>{{ item.acronym1 }}</p>
