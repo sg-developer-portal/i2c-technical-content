@@ -11,18 +11,3 @@ The intended audience are:
 
 ## Terms and Acronyms
 
-{% for item in site.acronyms %}
- <details>
-  <summary>{{ item.term }}</summary>
-   <p>{{ item.acronym1 }}</p>
-   
-   {% if item.acronym2 == nil %}
-     <p>{{ item.acronym2 }}</p>
-   {% endif %}
-
-   {% if item.acronym3 == nil %}
-     <p>{{ item.acronym3 }}</p>
-   {% endif %}
-   
- </details>
-{% endfor %}
