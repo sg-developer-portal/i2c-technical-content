@@ -4,10 +4,11 @@ This deployment guide is developed based on outcomes of GovTech’s Capability C
 
 ## Audience
 
-The intended audience are: 
-a) Infrastructure Engineers
-b) DevOps Engineers
-
+The intended audience are:
+<ol type="a">
+  <li>Infrastructure Engineers</li>
+  <li>DevOps Engineers</li>
+</ol>
 
 ## Terms and Acronyms
 
