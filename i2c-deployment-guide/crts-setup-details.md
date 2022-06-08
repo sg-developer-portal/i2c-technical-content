@@ -2,11 +2,11 @@
 
 ### Create repository for CRTS
 
-![Fig 1: Create repository for CRTS](/assets/create-repository-for-crts.png)
+![Fig 1: Create repository for CRTS.](/assets/create-repository-for-crts.png)
 
 ### Take note of the Universal Resource Identifier (URI) after the repository creation
 
-![Fig 2: Universal Resource Identifier (URI) after the repository creation](/assets/universal-resource-identifier.png)
+![Fig 2: Universal Resource Identifier (URI) after the repository creation.](/assets/universal-resource-identifier.png)
 
 ## Dockerfile
 
@@ -43,7 +43,7 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
 
 5. Verify the upload status from AWS ECR
 
-![Fig 3: Verify the upload status from AWS ECR](/assets/verify-status.png)
+![Fig 3: Verify the upload status from AWS ECR.](/assets/verify-status.png)
 
 6. Take note of this image URI of latest tag because will use this as part of AWS Batch setup later.
 
@@ -51,40 +51,154 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
 
 ## AWS Batch
 
-**Compute Environments**
+### Compute Environments
 
-![Fig 5: Compute Environments](/assets/i2c-architecture.png)
+![Fig 5: Compute Environments](/assets/compute-environments.png)
 
-**Job Queue**
+### Job Queue
 
-![Fig 6: Job Queue](/assets/i2c-architecture.png)
+1. Create Job Queue for crts-aws (example name: crts-aws-jq).
 
-**Job Definitions**
+![Fig 6: Create Job Queue.](/assets/job-queue.png)
 
-![Fig 7: Job Definitions](/assets/i2c-architecture.png)
+2. Select the same compute environments created [here](/crts-setup-details?id=compute-environments).
+
+![Fig 7: Select compute environments.](/assets/select-compute-environments.png)
+
+### Job Definitions
+
+1. Create Job Definition for AWS (example name: CrtsAwsJD).
+
+![Fig 8: Create Job Definition for AWS.](/assets/create-job-definition.png)
+
+2. Replace the Container properties with the ECR URI created [here](/crts-setup-details?id=dockerfile-for-crts) (for AWS).
+
+![Fig 9: Replace the Container properties.](/assets/replace-container-properties.png)
+
+3. Remember to enable “Assign public IP”.
+
+![Fig 10: Enable "Assign public IP".](/assets/enable-assign-public-ip.png)
+
+4. Create job definition with following settings.
+
+![Fig 11: Create job definition with following settings.](/assets/job-definition-settings.png)
 
 ## AWS Lambda
 
-**Lambda triggers the AWS Batch**
+### Lambda triggers the AWS Batch
 
-![Fig 8: Lambda triggers the AWS Batch](/assets/i2c-architecture.png)
+1. Unzip the code for triggering the AWS Batch created in 5.3 AWS Batch.
+
+2. Create AWS Lambda with Python 3.8 Runtime and paste the code into lambda_function.py .
+
+3. Go to Configuration -> Environment Variables, add in
+
+   - aws_jobdefinition
+   - aws_jobqueue
+   
+   ```bash
+   # Value of the environment variables can get from AWS Batch [Job Queue](/crts-setup-details?id=job-queue) and [Job Definition](/crts-setup-details?id=job-definition), note that the value of JD will need to include revision number (:2) if not revision 1.
+   # Sample value
+   CrtsAwsJD:2
+   ```
+   
+4. Go to Configuration -> Permissions and add in actions below:
+
+   - Allow: batch:SubmitJob
+
+   ```bash
+	Policy Value:
+	{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "VisualEditor0",
+				"Effect": "Allow",
+				"Action": "batch:SubmitJob",
+				"Resource": "*"
+			}
+		]
+	}
+   ```
+
+![Fig 12: Enable batch:SubmitJob.](/assets/permission-policies.png)
+
+![Fig 13: Create policy in JSON.](/assets/json-code.png)
+
+![Fig 14: Policies created.](/assets/policies-created.png)
+
+5. With the lambda and API Gateway, there is the  ability to trigger the AWS Batch via the API.
 
 ## AWS API Gateway
 
-**Creation via Lambda**
+### Creation via Lambda
 
-![Fig 9: Creation via Lambda](/assets/i2c-architecture.png)
+1. Create an API Gateway using Lambda, go to the AWS Lambda created [here](/crts-setup-details?id=lambda-triggers-the-aws-batch).
+
+2. Go to Lambda Configuration -> Triggers -> Add Trigger with settings below:
+
+![Fig 15: Add Triggers in Lambda configuration.](/assets/add-triggers-in-lambda-configuration.png)
+
+3. After the creation of API Gateway, click on Actions to “Create Method” and select "POST".
+
+![Fig 16: Create POST method.](/assets/create-post-method.png)
+
+4. Next is to configure the lambda integration, by putting the lambda function name to the textbox and check “Lambda Proxy Integration” below:
+
+![Fig 17: Configure lambda integration.](/assets/configure-lambda-integration.png)
+
+5. On Method Execution screen, click on “Method Request”:
+
+![Fig 18: Select Method Request.](/assets/select-method-request.png)
+
+6. On the Method Request, ensure API Key Required is set to **true**:
+
+![Fig 19: Set API Key Required to true.](/assets/api-key-required.png)
+
+7. Select the “ANY” method and run “Delete Method”. After deleted “ANY”, can proceed with next step.
+
+![Fig 20: Run delete method.](/assets/run-delete-method.png)
+
+8. To test out the API Gateway, will need to create API Keys and then either use Postman. The API key will  be appended in the request header x-api-key.
+
+![Fig 21: Test API Gateway.](/assets/test-api-gateway.png)
+
+9. Next is the configuration for CORS -> Enable CORS.
+
+![Fig 22: Configuring the CORS.](/assets/configure-cors.png)
+
+10. After enabled the CORS settings, go to POST method -> Method Response.
+
+![Fig 23: POST method in CORS settings.](/assets/post-method-in-cors-settings.png)
+
+11. On page Method Response, update the response Headers for 200 as shown below:
+
+![Fig 24: Update response headers for 200.](/assets/update-response-header-for-200.png)
+
+12. After done with all the configurations, select crts:
+
+![Fig 25: Select CRTS in CORS configuration.](/assets/select-crts-in-cors-config.png)
+
+   - Click on Deploy API:
+   
+![Fig 26: Click on Deploy API.](/assets/deploy-api.png)
+   
+   - Choose default:
+   
+![Fig 27: Choose default when deploying API.](/assets/choose-default.png)
+
+13. CORS setting will need to verify using Swagger, on the steps listed [here](/crts-setup-details?id=access-the-crts-api-in-aws-api-gateway-using-swagger).
 
 ## Swagger via AWS S3
 
-**AWS S3**
+### AWS S3
 
 ![Fig 10: AWS S3](/assets/i2c-architecture.png)
 
-**Swagger**
+### Swagger
 
 ![Fig 11: Swagger](/assets/i2c-architecture.png)
 
-**Access the CRTS API in AWS API Gateway using Swagger**
+### Access the CRTS API in AWS API Gateway using Swagger
 
 ![Fig 12: Access the CRTS API in AWS API Gateway using Swagger](/assets/i2c-architecture.png)
