@@ -1,22 +1,90 @@
-The list of software tools utilised in this POC is shown below:
+## AWS Elastic Container Registry
 
-## Software Tools
+#### Create repository for CRTS
 
-1. **[Terraformer (ver 0.8.13)](https://github.com/GoogleCloudPlatform/terraformer ':target=_blank')**: The main Command Line Interface (CLI) tools used by CRTS solution to import cloud infrastructure.
-2. **[Terraform (ver 0.12.31)](https://www.terraform.io/ ':target=_blank')**: Open-source infrastructure as code (IaC) software tools.
-3. **[Checkov (ver 2.0.475)](https://www.checkov.io/ ':target=_blank')**: Scans cloud infrastructure provisioned and detects security and compliance misconfigurations using graph-based scanning.
-4. **[Driftctl (ver 0.15.0)](https://driftctl.com/ ':target=_blank')**: Open-source CLI that warns of infrastructure drift.
-5. **[Swagger-ui (swagger-ui-4.0.0-rc.2)](https://github.com/swagger-api/swagger-ui ':target=_blank')**: Allow to visualize and interact with the API’s resources without having any of the implementation logic in place.
-6. **[Docker (ubuntu:20.04)](https://www.docker.com/ ':target=_blank')**: Open-source containerization platform.
+![Fig 1: Create repository for CRTS](/assets/create-repository-for-crts.png)
 
-## AWS Resources
+#### Take note of the Universal Resource Identifier (URI) after the repository creation
 
-Cloud resources utilised are as shown below:
+![Fig 2: Universal Resource Identifier (URI) after the repository creation](/assets/universal-resource-identifier.png)
 
-1. **AWS Elastic Container Registry**: Using to host the dockerfile of CRTS solution.
-2. **AWS Fargate**: Using to run the docker application of CRTS solution.
-3. **AWS Batch**: Using to schedule and trigger the AWS fargate to execute the CRTS solution.
-4. **AWS Lambda**: Using as the AWS Batch Trigger when receiving API request from API gateway.
-5. **AWS S3**: Using to upload the generated output. Hosting swagger static websites.
-6. **AWS API Gateway**: Allowing user to consume the CRTS API with api-key.
+## Dockerfile
 
+#### Prerequisite
+
+- Install AWS CLI
+- Install Docker
+
+Refernce: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html ':target=_blank')
+
+#### Dockerfile for CRTS
+
+1. Unzip the docker package zip file to local.
+
+2. Open the Command Prompt cmd on the extracted directory and run docker build command.
+
+   ```bash
+   docker build -t crts
+   ```
+
+3. Run docker tag command to tag the image with the AWS ECR URI
+
+   ```bash
+   docker tag crts-aws:latest "331489159872.dkr.ecr.ap-southeast-1.amazonaws.com/crts":latest
+   ```
+   
+*Replace the highlighted value with the URI from [here](/crts-setup-details?id=take-note-of-the-universal-resource-identifier-uri-after-the-repository-creation)*
+
+4. Run docker push command to push the local image to AWS ECR.
+
+   ```bash
+   docker push 331489159872.dkr.ecr.ap-southeast-1.amazonaws.com/crts:latest
+   ```
+
+5. Verify the upload status from AWS ECR
+
+![Fig 3: Verify the upload status from AWS ECR](/assets/verify-status.png)
+
+6. Take note of this image URI of latest tag because will use this as part of AWS Batch setup later.
+
+![Fig 4: Image URI](/assets/copy-uri.png)
+
+## AWS Batch
+
+**Compute Environments**
+
+![Fig 5: Compute Environments](/assets/i2c-architecture.png)
+
+**Job Queue**
+
+![Fig 6: Job Queue](/assets/i2c-architecture.png)
+
+**Job Definitions**
+
+![Fig 7: Job Definitions](/assets/i2c-architecture.png)
+
+## AWS Lambda
+
+**Lambda triggers the AWS Batch**
+
+![Fig 8: Lambda triggers the AWS Batch](/assets/i2c-architecture.png)
+
+## AWS API Gateway
+
+**Creation via Lambda**
+
+![Fig 9: Creation via Lambda](/assets/i2c-architecture.png)
+
+## Swagger via AWS S3
+
+**AWS S3**
+
+![Fig 10: AWS S3](/assets/i2c-architecture.png)
+
+**Swagger**
+
+![Fig 11: Swagger](/assets/i2c-architecture.png)
+
+**Access the CRTS API in AWS API Gateway using Swagger**
+
+![Fig 12: Access the CRTS API in AWS API Gateway using Swagger](/assets/i2c-architecture.png)
