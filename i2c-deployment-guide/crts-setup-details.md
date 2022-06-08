@@ -97,10 +97,11 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
    - aws_jobqueue
    
    ```bash
-   # Value of the environment variables can get from AWS Batch [Job Queue](/crts-setup-details?id=job-queue) and [Job Definition](/crts-setup-details?id=job-definition), note that the value of JD will need to include revision number (:2) if not revision 1.
    # Sample value
    CrtsAwsJD:2
    ```
+   
+   - Value of the environment variables can get from AWS Batch [Job Queue](/crts-setup-details?id=job-queue) and [Job Definition](/crts-setup-details?id=job-definition), note that the value of JD will need to include revision number (:2) if not revision 1.
    
 4. Go to Configuration -> Permissions and add in actions below:
 
