@@ -6,4 +6,4 @@
   <figcaption>Fig 1: I2C High Level Design</figcaption>
 </figure>
 
-![](/assets/i2c-architecture.png)
+![Fig 1: I2C High Level Design](/assets/i2c-architecture.png)
