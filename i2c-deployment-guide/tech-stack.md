@@ -13,10 +13,10 @@ The list of software tools utilised in this POC is shown below:
 
 Cloud resources utilised are as shown below:
 
-1. **AWS Elastic Container Registry:** Using to host the dockerfile of CRTS solution.
-2. **AWS Fargate:** Using to run the docker application of CRTS solution
-3. **AWS Batch:** Using to schedule and trigger the AWS fargate to execute the CRTS solution
-4. **AWS Lambda:** Using as the AWS Batch Trigger when receiving API request from API gateway
-5. **AWS S3:** Using to upload the generated output. Hosting swagger static websites
-6. **AWS API Gateway:** Allowing user to consume the CRTS API with api-key
+1. **AWS Elastic Container Registry**: Using to host the dockerfile of CRTS solution.
+2. **AWS Fargate**: Using to run the docker application of CRTS solution
+3. **AWS Batch**: Using to schedule and trigger the AWS fargate to execute the CRTS solution
+4. **AWS Lambda**: Using as the AWS Batch Trigger when receiving API request from API gateway
+5. **AWS S3**: Using to upload the generated output. Hosting swagger static websites
+6. **AWS API Gateway**: Allowing user to consume the CRTS API with api-key
 
