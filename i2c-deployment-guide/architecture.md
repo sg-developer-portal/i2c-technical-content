@@ -1,4 +1,4 @@
-High Level Design
+
 
 <figure style="text-align: center">
   <img
