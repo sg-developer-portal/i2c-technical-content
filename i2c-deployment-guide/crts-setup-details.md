@@ -33,7 +33,7 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
    docker tag crts-aws:latest "331489159872.dkr.ecr.ap-southeast-1.amazonaws.com/crts":latest
    ```
    
-     - *Replace the highlighted value with the URI from [here](/crts-setup-details?id=take-note-of-the-universal-resource-identifier-uri-after-the-repository-creation)*
+   - *Replace the highlighted value with the URI from [here](/crts-setup-details?id=take-note-of-the-universal-resource-identifier-uri-after-the-repository-creation)*
 
 4. Run docker push command to push the local image to AWS ECR.
 
