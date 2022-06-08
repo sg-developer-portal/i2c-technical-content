@@ -12,17 +12,17 @@ The intended audience are:
 ## Terms and Acronyms
 
 <details>
- <summary>Amazon ECR</summary>
+ <summary><h4>Amazon ECR</h4></summary>
  <p>Amazon Elastic Container Registry (Amazon ECR) is an Amazon Web Services (AWS) managed container image registry service that is secure, scalable, and reliable. Amazon ECR supports private repositories with resource-based permissions using AWS IAM.</p>
 </details>
  
 <details> 
- <summary>Amazon Elastic Container Service (ECS)</summary>
+ <summary><h4>Amazon Elastic Container Service (ECS)</h4></summary>
  <p>Amazon Elastic Container Service (ECS) is a cloud computing service in Amazon Web Services (AWS) that manages containers and allows developers to run applications in the cloud without having to configure an environment for the code to run in.</p>
 </details>
  
 <details>  
- <summary>API</summary>
+ <summary><h4>API</h4></summary>
  <p>Application Programming Interface</p>
 </details>
  
