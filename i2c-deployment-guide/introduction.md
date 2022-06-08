@@ -17,7 +17,7 @@ The intended audience are:
 </details>
  
 <details> 
- <summary>mazon Elastic Container Service (ECS)</summary>
+ <summary>Amazon Elastic Container Service (ECS)</summary>
  <p>Amazon Elastic Container Service (ECS) is a cloud computing service in Amazon Web Services (AWS) that manages containers and allows developers to run applications in the cloud without having to configure an environment for the code to run in.</p>
 </details>
  
