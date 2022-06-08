@@ -194,12 +194,69 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
 
 ### AWS S3
 
-![Fig 10: AWS S3](/assets/i2c-architecture.png)
+1. Create a new S3 and allow public access:
+
+![Fig 28: Create a new S3 and allow public access.](/assets/create-new-s3.png)
+
+2. After S3 creation, go to bucket Properties and enable Static web hosting:
+
+![Fig 29: Enable static web hosting.](/assets/enable-static-web-hosting.png)
+
+3. Take note of the “Bucket website endpoint”, this will be used as URL to access swagger.
+
+![Fig 29: Bucket website endpoint URL.](/assets/bucket-website-endpoint-url.png)
+
+4. Go to Permissions -> Bucket Policy and put the value as below(replace the highlighted value to your S3 bucket name):
+
+   ```bash
+	{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "PublicReadGetObject",
+				"Effect": "Allow",
+				"Principal": "*",
+				"Action": "s3:GetObject",
+				"Resource": "arn:aws:s3:::cris-swagger-bucket/*"
+			}
+		]
+	}
+
+   ```
+
+5. Go to Permissions -> Cross-origin resource sharing (CORS) and put the value as below:
+
+   ```bash
+	[
+		{
+			"AllowedHeaders": [
+				"*"
+			],
+			"AllowedMethods": [
+				"PUT",
+				"POST"
+			],
+			"AllowedOrigins": [
+				"*"
+			],
+			"ExposeHeaders": []
+		}
+	]
+   ```
 
 ### Swagger
 
-![Fig 11: Swagger](/assets/i2c-architecture.png)
+1. Unzip the Swagger code and upload to the S3 bucket created [here](/crts-setup-details?id=aws-s3).
+2. Need to update “crts-swagger.json” with the API gateway ([AWS API Gateway](/crts-setup-details?id=aws-api-gateway)) details, such as URL.
+3. Upload the new configuration files to S3.
+4. Should be able to browse the swagger website using the bucket website endpoint from [AWS S3](/crts-setup-details?id=aws-s3) step 3.
 
 ### Access the CRTS API in AWS API Gateway using Swagger
 
-![Fig 12: Access the CRTS API in AWS API Gateway using Swagger](/assets/i2c-architecture.png)
+![Fig 30: CRTS job trigger API](/assets/crts-job-trigger-api.png)
+
+![Fig 31: CRTS job trigger API parameters](/assets/crts-job-trigger-api-parameters.png)
+
+![Fig 32: CRTS job trigger API body](/assets/crts-job-trigger-api-body.png)
+
+![Fig 33: CRTS job trigger API success response](/assets/crts-job-trigger-api-success-response.png)
