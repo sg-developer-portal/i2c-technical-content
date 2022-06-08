@@ -1,5 +1,3 @@
-## Recommendations
-
 1. Build Continuous Integration (CI)/Continuous Delivery (CD) pipeline for automation of Terraform Execution.
 2. To improve the source code of process.sh and dockerfile, so that it can take in more than the 4 parameters below:
      - aws_access_key_id - AWS account ID.
