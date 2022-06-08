@@ -249,7 +249,7 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
 1. Unzip the Swagger code and upload to the S3 bucket created [here](/crts-setup-details?id=aws-s3).
 2. Need to update “crts-swagger.json” with the API gateway details (refer to [AWS API Gateway](/crts-setup-details?id=aws-api-gateway)), such as URL.
 3. Upload the new configuration files to S3.
-4. Should be able to browse the swagger website using the bucket website endpoint from [AWS S3](/crts-setup-details?id=aws-s3) step 3.
+4. Should be able to browse the swagger website using the bucket website endpoint from [AWS S3](/crts-setup-details?id=aws-s3), Step 3.
 
 ### Access the CRTS API in AWS API Gateway using Swagger
 
