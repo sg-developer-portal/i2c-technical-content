@@ -1,23 +1,23 @@
 ## AWS Elastic Container Registry
 
-#### Create repository for CRTS
+### Create repository for CRTS
 
 ![Fig 1: Create repository for CRTS](/assets/create-repository-for-crts.png)
 
-#### Take note of the Universal Resource Identifier (URI) after the repository creation
+### Take note of the Universal Resource Identifier (URI) after the repository creation
 
 ![Fig 2: Universal Resource Identifier (URI) after the repository creation](/assets/universal-resource-identifier.png)
 
 ## Dockerfile
 
-#### Prerequisite
+### Prerequisite
 
 - Install AWS CLI
 - Install Docker
 
-Refernce: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html ':target=_blank')
+Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html ':target=_blank')
 
-#### Dockerfile for CRTS
+### Dockerfile for CRTS
 
 1. Unzip the docker package zip file to local.
 
