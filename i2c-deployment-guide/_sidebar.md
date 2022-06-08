@@ -2,6 +2,6 @@
 * [I2C (Infra to Code)](/i2c)
 * [Architecture](/architecture)
 * [Tech Stack](/tech-stack)
-* [CRTS Setup Details](/setup-details)
+* [CRTS Setup Details](/crts-setup-details)
 * [Key Learnings and Findings](/key-learnings-and-findings)
 * [Recommendations](/recommendations)
