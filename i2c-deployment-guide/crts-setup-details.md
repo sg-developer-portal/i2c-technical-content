@@ -160,7 +160,7 @@ Reference: [Using Amazon ECR with the AWS CLI](https://docs.aws.amazon.com/Amazo
 
 ![Fig 20: Run delete method.](/assets/run-delete-method.png)
 
-8. To test out the API Gateway, will need to create API Keys and then either use Postman. The API key will  be appended in the request header x-api-key.
+8. To test out the API Gateway, will need to create API Keys and then either use Postman or Curl. The API key will  be appended in the request header x-api-key.
 
 ![Fig 21: Test API Gateway.](/assets/test-api-gateway.png)
 
