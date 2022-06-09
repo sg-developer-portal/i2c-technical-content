@@ -104,7 +104,7 @@ The intended audience are:
 </details>
  
 <details> 
- <summary>I2C</summary>
+ <summary>I<sub>2</sub>C</summary>
  <p>Infra to Code.</p>
 </details>
  
