@@ -1,6 +1,6 @@
 ## Purpose
 
-This deployment guide is developed based on outcomes of GovTech’s Capability Centre for Government ICT infrastructure (CapCEN) Proof of Concept (POC) for Cloud Resource Transformation Solution (CRTS) that was targeted for Amazon Web Services (AWS) in Government on Commercial  Cloud (GCC)1.0. It consists of detailed resources required, tools utilized and steps necessary for deployment of this solution into agencies’ AWS environment in GCC1.0.
+This deployment guide is developed based on outcomes of GovTech’s Capability Centre for Government ICT infrastructure (CapCEN) Proof of Concept (POC) for Cloud Resource Transformation Solution (CRTS) that was targeted for Amazon Web Services (AWS) in Government on Commercial  Cloud (GCC)1.0. It consists of detailed resources required, tools utilised and steps necessary for the deployment of this solution into agencies’ AWS environment in GCC1.0.
 
 ## Audience
 
@@ -38,7 +38,7 @@ The intended audience are:
  
 <details>  
  <summary>AWS API Gateway</summary>
- <p>Amazon Web Services API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the "front door" for applications to access data, business logic, or functionality from backend services. Using API Gateway, RESTful APIs and WebSocket APIs can be created that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications.</p>
+ <p>Amazon Web Services API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the "front door" for applications to access data, business logic, or functionality from backend services. Using API Gateway, RESTful APIs and WebSocket APIs can be created that enable real-time two-way communication applications. API Gateway supports containerised and serverless workloads, as well as web applications.</p>
 </details>
  
 <details>  
