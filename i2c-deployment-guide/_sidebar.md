@@ -1,5 +1,5 @@
 * [Introduction](/)
-* [I<sub>2</sub>C (Infra to Code)](/i2c)
+* [I<sub>2</sub>C {{Infra to Code}}](/i2c)
 * [Architecture](/architecture)
 * [Tech Stack](/tech-stack)
 * [CRTS Setup Details](/crts-setup-details)
